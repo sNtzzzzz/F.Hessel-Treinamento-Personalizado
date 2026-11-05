@@ -1,5 +1,39 @@
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+document.querySelectorAll('.starfield-button').forEach((button, buttonIndex) => {
+  const svg = button.querySelector('.starfield-outline');
+  const outline = svg?.querySelector('rect');
+
+  const resizeOutline = () => {
+    if (!svg || !outline) return;
+    const { width, height } = button.getBoundingClientRect();
+    if (!width || !height) return;
+    svg.setAttribute('viewBox', `0 0 ${width.toFixed(1)} ${height.toFixed(1)}`);
+    outline.setAttribute('x', '1');
+    outline.setAttribute('y', '1');
+    outline.setAttribute('width', String(Math.max(1, width - 2)));
+    outline.setAttribute('height', String(Math.max(1, height - 2)));
+    outline.setAttribute('rx', String(Math.max(1, height / 2 - 1)));
+  };
+
+  resizeOutline();
+  if ('ResizeObserver' in window) new ResizeObserver(resizeOutline).observe(button);
+  else window.addEventListener('resize', resizeOutline, { passive: true });
+
+  for (let index = 0; index < 18; index += 1) {
+    const pixel = document.createElement('span');
+    const x = 7 + ((index * 37 + buttonIndex * 19) % 86);
+    const y = 17 + ((index * 29 + 11) % 66);
+    pixel.className = 'starfield-pixel';
+    pixel.setAttribute('aria-hidden', 'true');
+    pixel.style.setProperty('--x', `${x}%`);
+    pixel.style.setProperty('--y', `${y}%`);
+    pixel.style.setProperty('--delay', `${((index * 0.37) % 2.4).toFixed(2)}s`);
+    pixel.style.setProperty('--size', `${index % 3 === 0 ? 1.7 : 1.2}px`);
+    button.append(pixel);
+  }
+});
+
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 

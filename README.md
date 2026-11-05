@@ -17,6 +17,7 @@ Depois, acesse o endereço local exibido pelo servidor. Para publicar, envie a p
 - **script.js**: menu móvel, linha do tempo, ano do rodapé e revelações ao rolar.
 - **dumbbell-loader.js**: inicia a cena 3D quando o hero se aproxima da tela.
 - **dumbbell3d.js**: geometria, materiais, iluminação e interação do halter 3D.
+- Os CTAs da hero e do encerramento usam um Starfield Button autoral, sem dependências adicionais; os pontos no contorno são SVG e os pixels internos são adicionados por JavaScript.
 - **assets/vendor/**: arquivos locais do Three.js 0.187.0 e sua licença MIT.
 - **assets/**: logotipo, favicons, foto original e cópia JPEG otimizada para o site.
 - **og:image** usa a foto local otimizada. Como o domínio definitivo ainda não foi informado, troque o caminho relativo por uma URL absoluta ao publicar.
@@ -30,7 +31,15 @@ Depois, acesse o endereço local exibido pelo servidor. Para publicar, envie a p
 - O carregador importa a cena sob demanda perto do hero. A renderização pausa fora da área visível ou quando a aba fica oculta; em telas menores usa menos segmentos e resolução limitada.
 - Em falha de WebGL ou do módulo, permanece um fallback CSS estático claramente identificado. A página e os CTAs continuam acessíveis.
 - prefers-reduced-motion desativa a rotação automática; a interação manual continua disponível.
+- O efeito Starfield fica estático com movimento reduzido e mantém os botões funcionais e legíveis em telas touch.
+- Os cards Online e Presencial aceitam clique/toque em toda a superfície; o link visível mantém o nome acessível e o foco por teclado.
 - Three.js 0.187.0 está vendorizado para evitar dependência de CDN durante a execução. Manrope e DM Mono são carregadas do Google Fonts com fontes de sistema como fallback.
+
+## Validação desta revisão
+
+- Conferidos layout e rolagem horizontal em 360, 390, 768, 1280, 1440 e 1920 px.
+- Verificados halter WebGL, CTAs Starfield, menu móvel, linha do tempo, FAQ e estado `prefers-reduced-motion` no Chromium.
+- A pontuação Lighthouse não foi medida nesta revisão.
 
 ## Conteúdo comercial a confirmar
 
