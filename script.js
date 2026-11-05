@@ -13,7 +13,7 @@ document.querySelectorAll('.starfield-button').forEach((button, buttonIndex) => 
     outline.setAttribute('y', '1');
     outline.setAttribute('width', String(Math.max(1, width - 2)));
     outline.setAttribute('height', String(Math.max(1, height - 2)));
-    outline.setAttribute('rx', String(Math.max(1, height / 2 - 1)));
+    outline.setAttribute('rx', '0');
   };
 
   resizeOutline();
@@ -118,7 +118,7 @@ const footerYear = document.querySelector('#footer-year');
 if (footerYear) footerYear.textContent = String(new Date().getFullYear());
 
 const revealTargets = document.querySelectorAll(
-  '.section-heading, .pillar-card, .process-steps, .about-photo-wrap, .about-copy, .modality-card, .plan-card, .faq-item, .closing-content',
+  '.section-heading, .pillar-card, .process-steps, .about-photo-wrap, .about-copy, .modality-card, .plan-card, .closing-content',
 );
 
 if ('IntersectionObserver' in window && !reduceMotion) {

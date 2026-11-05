@@ -26,7 +26,7 @@ Depois, acesse o endereço local exibido pelo servidor. Para publicar, envie a p
 
 - Paleta Carbon & Ember: #151718, #FF683B, #E9EDE8, #A1A8A6 e #30383B.
 - Hero editorial com halter WebGL interativo; a fotografia aparece somente na apresentação do Fernando.
-- Público do treinamento, linha do tempo interativa, modalidades, apresentação, planos, FAQ e CTAs de WhatsApp.
+- Público do treinamento, linha do tempo interativa, modalidades, apresentação, planos e CTAs de WhatsApp.
 - O halter usa geometria procedural, materiais metálicos e iluminação de estúdio gerada localmente. Arraste com mouse ou toque para girar; após a interação, retoma a rotação lenta.
 - O carregador importa a cena sob demanda perto do hero. A renderização pausa fora da área visível ou quando a aba fica oculta; em telas menores usa menos segmentos e resolução limitada.
 - Em falha de WebGL ou do módulo, permanece um fallback CSS estático claramente identificado. A página e os CTAs continuam acessíveis.
@@ -38,7 +38,7 @@ Depois, acesse o endereço local exibido pelo servidor. Para publicar, envie a p
 ## Validação desta revisão
 
 - Conferidos layout e rolagem horizontal em 360, 390, 768, 1280, 1440 e 1920 px.
-- Verificados halter WebGL, CTAs Starfield, menu móvel, linha do tempo, FAQ e estado `prefers-reduced-motion` no Chromium.
+- Verificados halter WebGL, CTAs Starfield, menu móvel, linha do tempo e estado `prefers-reduced-motion` no Chromium.
 - A pontuação Lighthouse não foi medida nesta revisão.
 
 ## Conteúdo comercial a confirmar
